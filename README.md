@@ -1,3 +1,3 @@
 # Learning
 
-These are some notes from my studies
+These are some notes and scripts from my studies
