@@ -7,11 +7,11 @@ const stories = {
     }
 }
 
-function getStories(stories) {
+function get(e) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (stories) {
-                resolve(stories)
+            if (e) {
+                resolve(e)
             } else {
                 reject("Error")
             }
@@ -19,11 +19,21 @@ function getStories(stories) {
     })
 }
 
-getStories(stories).then((stories) => {
-    console.log('Stories found')
-    console.log(stories.chapters.reduce(function (sequence, chapter) {
-        //retornar a sequencia de .then() para cada capítulo
-    }))
+get(stories.storyA).then((story) => {
+    console.log('Story Found: \n')
+
+    //MAKING MULTIPLE REQUESTS FOR MULTIPLE CHAPTERS (*****Appearing one by one, W/O Promise.all()*****)
+    story.chapters.reduce(function (sequence, chapter) {
+        //return a .then() for each chapter
+        //adds to sequence, that have initial value of a Promise.resolve()
+        //It will ever resolve and go to the first .then() of the sequence
+        return sequence.then(() => {
+            return get(chapter)
+        }).then((chapter) => {
+            console.log(`${chapter}\n`)
+        })
+    }, Promise.resolve())
+
 }).catch((err) => {
     console.log(err)
 })
