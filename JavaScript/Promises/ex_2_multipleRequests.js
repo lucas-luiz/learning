@@ -22,7 +22,7 @@ function get(e) {
 get(stories.storyA).then((story) => {
     console.log('Story Found: \n')
 
-    //MAKING MULTIPLE REQUESTS FOR MULTIPLE CHAPTERS (*****Appearing one by one, W/O Promise.all()*****)
+    //MAKING MULTIPLE REQUESTS FOR MULTIPLE CHAPTERS (*****Downloading and Appearing one by one, W/O Promise.all()*****)
     story.chapters.reduce(function (sequence, chapter) {
         //return a .then() for each chapter
         //adds to sequence, that have initial value of a Promise.resolve()
