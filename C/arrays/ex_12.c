@@ -19,12 +19,11 @@ int main()
             strcpy(aux, array[i++]);
             strcpy(array[i++], array[i]);
             strcpy(array[i], aux);
-            i = 0;
         }
     }
     for (i = 0; i < 5; i++)
     {
-        printf(" $s", array[i]);
+        printf(" %s", array[i]);
     }
 
     return 0;
