@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-typedef struct
+typedef struct // redefine specific struct(new type) to Product
 {
     int cod;
     float price;
