@@ -1,1 +1,0 @@
-            lastParenthesesIndex = lastParenthesesIndex.concat(index);
